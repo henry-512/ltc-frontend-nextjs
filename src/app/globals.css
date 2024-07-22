@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Colors
+    bg: white | gray-900
+ */
+.ltc-button-focus-outline {
+  @apply rounded-lg focus:ring-2 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-600;
+}
