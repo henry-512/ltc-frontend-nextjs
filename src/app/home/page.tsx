@@ -1,7 +1,7 @@
 import LTCFooter from '@/component/LTCFooter'
 import Navbar from '@/component/Navbar'
 import RainbowText from '@/component/RainbowText'
-import WhereAmI from '@/component/WhereAmiI'
+import WhereAmI from '@/component/WhereAmI'
 
 export default function Home() {
   return (
