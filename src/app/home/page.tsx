@@ -3,6 +3,9 @@ import RainbowText from '@/component/RainbowText'
 import Root from '@/component/Root'
 import { LuExternalLink } from 'react-icons/lu'
 
+/**
+ * Home page. Gives a short description of me and the website and some cool text.
+ */
 export default function Home() {
   return (
     <Root navId="home">

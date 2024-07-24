@@ -3,11 +3,14 @@ import { LuExternalLink } from 'react-icons/lu'
 import { MdEmail } from 'react-icons/md'
 import IconWithLabel from './IconWithLabel'
 
+/**
+ * Fixed footer containing quick links. Includes a div for spacing.
+ */
 export default function LTCFooter() {
   return (
     <>
       <div className="h-6" />
-      <footer className="fixed bottom-0 flex justify-center w-full bg-gray-100 dark:bg-gray-800 px-4 py-1">
+      <footer className="fixed bottom-0 flex justify-center w-full bg-gray-100 dark:bg-gray-800 px-4 py-1 border-b-blue-300 dark:border-blue-800 border-t-2">
         <div className="flex max-w-screen-xl w-screen justify-between items-center text-md space-x-5 pb-0.5">
           <IconWithLabel
             link="/blog/ltc"

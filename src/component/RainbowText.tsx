@@ -1,3 +1,8 @@
+/**
+ * Rainbow animation with a slow wave up and down. Each letter is offset.
+ * @param text The text to rainbow-ify.
+ * @returns Multiple <span> elements each containing one word of the text. Each letter is its own <span> element.
+ */
 export default function RainbowText(props: { text: string }) {
   let global_offset = 0
 

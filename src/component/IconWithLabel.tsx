@@ -1,6 +1,17 @@
 import { concat } from '@/util'
 import React, { ReactElement, JSXElementConstructor } from 'react'
 
+/**
+ * An icon with a label. The label disappears after a specified breakpoint.
+ * 
+ * @param text The label's text.
+ * @param link A link to go to when clicked.
+ * @param children Expects some kind of icon.
+ * @param newTab True if the link opens in a new tab. Default false.
+ * @param textHideBreakpoint What breakpoint to hide the text on. Default 'sm'
+ * @param inline True if the link should be inline. Default false.
+ * @returns 
+ */
 export default function IconWithLabel(props: {
   text: string
   link: string

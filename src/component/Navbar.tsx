@@ -12,6 +12,10 @@ const pages = [
   ['contact', '/contact', 'contact'],
 ]
 
+/**
+ * Client component. Navigation bar, designed for the top of the screen.
+ * @param navId The internal id for what page is selected.
+ */
 export default function Navbar(props: { navId: string }) {
   const [mobileOpened, setMobileOpened] = useState(false)
   const mainBox = useRef<any>(null)
