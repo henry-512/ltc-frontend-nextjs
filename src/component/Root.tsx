@@ -23,7 +23,7 @@ export default function Root(props: {
 
   return (
     <body
-      className={`${inter.className} bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200`}
+      className={`${inter.className} bg-white text-gray-700 dark:bg-gray-900 dark:text-gray-200`}
     >
       {props.hideNav || (
         // display:unset lets sticky work properly

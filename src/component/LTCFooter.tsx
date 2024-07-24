@@ -9,33 +9,33 @@ import IconWithLabel from './IconWithLabel'
 export default function LTCFooter() {
   return (
     <>
-      <div className="h-6" />
-      <footer className="fixed bottom-0 flex justify-center w-full bg-gray-100 dark:bg-gray-800 px-4 py-1 border-b-blue-300 dark:border-blue-800 border-t-2">
-        <div className="flex max-w-screen-xl w-screen justify-between items-center text-md space-x-5 pb-0.5">
+      <div className='h-6' />
+      <footer className='fixed bottom-0 flex w-full justify-center border-t-2 border-b-blue-300 bg-gray-100 px-4 py-1 dark:border-blue-800 dark:bg-gray-800'>
+        <div className='text-md flex w-screen max-w-screen-xl items-center justify-between space-x-5 pb-0.5'>
           <IconWithLabel
-            link="/blog/ltc"
-            text="powered by magic"
-            textHideBreakpoint="xs"
+            link='/blog/ltc'
+            text='powered by magic'
+            textHideBreakpoint='xs'
           >
-            <LuExternalLink fontSize="20" />
+            <LuExternalLink fontSize='20' />
           </IconWithLabel>
-          <div className="flex flex-row space-x-4 items-center">
+          <div className='flex flex-row items-center space-x-4'>
             <IconWithLabel
-              link="https://www.linkedin.com/in/henry-thiel/"
-              text="LinkedIn"
+              link='https://www.linkedin.com/in/henry-thiel/'
+              text='LinkedIn'
               newTab
             >
-              <FaLinkedin fontSize="20" />
+              <FaLinkedin fontSize='20' />
             </IconWithLabel>
             <IconWithLabel
-              link="https://github.com/henry-512"
-              text="Github"
+              link='https://github.com/henry-512'
+              text='Github'
               newTab
             >
-              <FaGithub fontSize="20" />
+              <FaGithub fontSize='20' />
             </IconWithLabel>
-            <IconWithLabel link="/contact" text="Email" newTab>
-              <MdEmail fontSize="20" />
+            <IconWithLabel link='/contact' text='Email' newTab>
+              <MdEmail fontSize='20' />
             </IconWithLabel>
           </div>
         </div>

@@ -7,10 +7,9 @@
     bg: white | gray-900
  */
 .ltc-color-link {
-  @apply text-blue-600 hover:text-blue-800 dark:text-blue-300 hover:dark:text-blue-400
+  @apply text-blue-600 hover:text-blue-800 dark:text-blue-300 hover:dark:text-blue-400;
 }
 
-
 .ltc-button-focus-outline {
-  @apply focus:ring-2 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-600;
+  @apply focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600;
 }

@@ -11,7 +11,7 @@ export default function RainbowText(props: { text: string }) {
       {props.text.split(' ').map((s, i) => (
         <span
           key={i}
-          className="text-5xl animate-rainbow px-3 select-none flex flex-wrap justify-center"
+          className='flex animate-rainbow select-none flex-wrap justify-center px-3 text-5xl'
           style={{ paddingBottom: '20px' }}
         >
           {s.split('').map((c, j) => {
@@ -19,7 +19,7 @@ export default function RainbowText(props: { text: string }) {
             return (
               <span
                 key={j}
-                className="animate-rainbow relative"
+                className='relative animate-rainbow'
                 style={{ animationDelay: `-${global_offset}s` }}
               >
                 {c}

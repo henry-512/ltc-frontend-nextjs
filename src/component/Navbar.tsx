@@ -35,32 +35,32 @@ export default function Navbar(props: { navId: string }) {
 
   return (
     <nav
-      className="sticky top-0 w-full bg-gray-100 dark:bg-gray-800 font-medium text-lg z-10 border-b-blue-300 dark:border-blue-800 border-b-2 text-nowrap"
+      className='sticky top-0 z-10 w-full text-nowrap border-b-2 border-b-blue-300 bg-gray-100 text-lg font-medium dark:border-blue-800 dark:bg-gray-800'
       ref={mainBox}
     >
-      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-3 pb-0">
-        <a href="/home" className="ltc-button-focus-outline rounded-t-lg">
-          <span className="self-center text-3xl font-semibold whitespace-nowrap hidden 2xs:block px-1">
+      <div className='mx-auto flex max-w-screen-xl items-center justify-between p-3 pb-0'>
+        <a href='/home' className='ltc-button-focus-outline rounded-t-lg'>
+          <span className='hidden self-center whitespace-nowrap px-1 text-3xl font-semibold 2xs:block'>
             like-the-color
           </span>
-          <span className="self-center text-3xl font-semibold whitespace-nowrap 2xs:hidden">
+          <span className='self-center whitespace-nowrap text-3xl font-semibold 2xs:hidden'>
             ltc
           </span>
         </a>
         {/* L-R nav menu (md+) */}
         <div
-          className="hidden md:animate-fadeVisible w-auto md:block"
-          id="navbar-default"
+          className='hidden w-auto md:block md:animate-fadeVisible'
+          id='navbar-default'
         >
-          <ul className="flex flex-row shrink">
+          <ul className='flex shrink flex-row'>
             {pages.map(([id, route, name]) => (
-              <li key={route} className="mx-3">
+              <li key={route} className='mx-3'>
                 <a
                   href={route}
                   className={concat(
                     props.navId === id && 'bg-blue-200 dark:bg-blue-900',
-                    'ltc-button-focus-outline ltc-color-link rounded-t-lg px-2 py-1 block',
-                    'hover:bg-blue-300 dark:hover:bg-blue-800'
+                    'ltc-button-focus-outline ltc-color-link block rounded-t-lg px-2 py-1',
+                    'hover:bg-blue-300 dark:hover:bg-blue-800',
                   )}
                 >
                   {name}
@@ -70,23 +70,23 @@ export default function Navbar(props: { navId: string }) {
           </ul>
         </div>
         {/* TD toggle menu (md-)*/}
-        <div className="flex flex-row md:hidden animate-fadeVisible ">
+        <div className='flex animate-fadeVisible flex-row md:hidden'>
           <div
             className={concat(
               !mobileOpened && 'hidden',
-              'absolute right-1.5 top-full bg-gray-100 dark:bg-gray-800 inline-block p-2 z-10 border-b-blue-300 dark:border-blue-800 border-2 rounded-b-lg'
+              'absolute right-1.5 top-full z-10 inline-block rounded-b-lg border-2 border-b-blue-300 bg-gray-100 p-2 dark:border-blue-800 dark:bg-gray-800',
             )}
-            id="navbar-default"
+            id='navbar-default'
           >
-            <ul className="font-medium flex flex-col">
+            <ul className='flex flex-col font-medium'>
               {pages.map(([id, route, name]) => (
                 <li key={route}>
                   <a
                     href={route}
                     className={concat(
                       props.navId === id && 'bg-blue-900',
-                      'ltc-button-focus-outline ltc-color-link rounded-lg px-2 py-1 block',
-                      'dark:hover:bg-blue-800'
+                      'ltc-button-focus-outline ltc-color-link block rounded-lg px-2 py-1',
+                      'dark:hover:bg-blue-800',
                     )}
                   >
                     {name}
@@ -96,16 +96,16 @@ export default function Navbar(props: { navId: string }) {
             </ul>
           </div>
           <button
-            data-collapse-toggle="navbar-default"
-            type="button"
-            className="ltc-button-focus-outline ltc-color-link inline-flex flex-row items-center justify-center rounded-lg space-x-3 pr-2"
+            data-collapse-toggle='navbar-default'
+            type='button'
+            className='ltc-button-focus-outline ltc-color-link inline-flex flex-row items-center justify-center space-x-3 rounded-lg pr-2'
             onClick={() => setMobileOpened(!mobileOpened)}
           >
-            <span className="sr-only">Open navigation menu</span>
-            <span className="animate-fadeHidden xs:animate-fadeVisible xs:block">
+            <span className='sr-only'>Open navigation menu</span>
+            <span className='animate-fadeHidden xs:block xs:animate-fadeVisible'>
               nav
             </span>
-            <IoMenu fontSize="30" />
+            <IoMenu fontSize='30' />
           </button>
         </div>
       </div>
