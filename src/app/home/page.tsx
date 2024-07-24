@@ -11,10 +11,7 @@ export default function Home() {
           <h1 className="text-6xl">Henry Thiel</h1>
           <h2 className="text-2xl">Software Developer</h2>
         </div>
-        <p
-          className="flex-1 max-w-screen-md inline"
-          style={{ transition: 'width 0.5s  ease' }}
-        >
+        <p className="flex-1 max-w-screen-md inline">
           Hello! I&apos;m a software developer with a background in full-stack
           web development and a passion for writing code. This self-hosted
           website is a test of my skills and a unified place to host the stuff I
