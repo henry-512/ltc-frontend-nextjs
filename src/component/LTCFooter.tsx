@@ -20,13 +20,18 @@ export default function LTCFooter() {
             <IconWithLabel
               link="https://www.linkedin.com/in/henry-thiel/"
               text="LinkedIn"
+              newTab
             >
               <FaLinkedin fontSize="20" />
             </IconWithLabel>
-            <IconWithLabel link="https://github.com/henry-512" text="Github">
+            <IconWithLabel
+              link="https://github.com/henry-512"
+              text="Github"
+              newTab
+            >
               <FaGithub fontSize="20" />
             </IconWithLabel>
-            <IconWithLabel link="/contact" text="Email">
+            <IconWithLabel link="/contact" text="Email" newTab>
               <MdEmail fontSize="20" />
             </IconWithLabel>
           </div>
