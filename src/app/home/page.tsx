@@ -10,7 +10,6 @@ export default function Home() {
       {/* display:unset lets sticky work properly */}
       <header style={{ display: 'unset' }}>
         <Navbar navId="home" />
-        {/* <WhereAmI path="/home/" desc="welcoming you here" /> */}
       </header>
       <main>
         <div className="max-w-screen-xl mx-auto flex flex-col gap-y-4 p-3 text-center min-h-main items-center">
