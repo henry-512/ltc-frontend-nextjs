@@ -7,7 +7,7 @@ export default function RainbowText(props: { text: string }) {
         <span
           key={i}
           className="text-5xl animate-rainbow px-3 select-none flex flex-wrap justify-center"
-          style={{ marginBottom: '10px' }}
+          style={{ paddingBottom: '20px' }}
         >
           {s.split('').map((c, j) => {
             global_offset += 1

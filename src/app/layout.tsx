@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '../app/globals.css'
-import NavBar from '@/component/Navbar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,7 +14,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const bodyClasses = `${inter.className} bg-white dark:bg-gray-900 dark:text-white`
+  const bodyClasses = `${inter.className} bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200`
 
   return (
     <html lang="en">
