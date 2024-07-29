@@ -35,17 +35,15 @@ export default function Navbar(props: { navId: string }) {
 
   return (
     <nav
-      className='sticky top-0 z-10 w-full text-nowrap border-b-2 border-b-blue-300 bg-gray-100 text-lg font-medium dark:border-blue-800 dark:bg-gray-800'
+      className='ltc-color-bg-alt ltc-color-border ltc-text-h4 sticky top-0 z-10 w-full text-nowrap border-b-2'
       ref={mainBox}
     >
       <div className='mx-auto flex max-w-screen-xl items-center justify-between p-3 pb-0'>
         <a href='/home' className='ltc-button-focus-outline rounded-t-lg'>
-          <span className='hidden self-center whitespace-nowrap px-1 text-3xl font-semibold 2xs:block'>
+          <span className='ltc-text-h2 hidden whitespace-nowrap 2xs:block'>
             like-the-color
           </span>
-          <span className='self-center whitespace-nowrap text-3xl font-semibold 2xs:hidden'>
-            ltc
-          </span>
+          <span className='ltc-text-h2 whitespace-nowrap 2xs:hidden'>ltc</span>
         </a>
         {/* L-R nav menu (md+) */}
         <div
@@ -58,9 +56,8 @@ export default function Navbar(props: { navId: string }) {
                 <a
                   href={route}
                   className={concat(
-                    props.navId === id && 'bg-blue-200 dark:bg-blue-900',
-                    'ltc-button-focus-outline ltc-color-link block rounded-t-lg px-2 py-1',
-                    'hover:bg-blue-300 dark:hover:bg-blue-800',
+                    props.navId === id && 'ltc-color-bg-blue',
+                    'ltc-button-focus-outline ltc-color-bg-button ltc-color-link block rounded-t-lg px-2 py-1',
                   )}
                 >
                   {name}
@@ -74,7 +71,7 @@ export default function Navbar(props: { navId: string }) {
           <div
             className={concat(
               !mobileOpened && 'hidden',
-              'absolute right-1.5 top-full z-10 inline-block rounded-b-lg border-2 border-b-blue-300 bg-gray-100 p-2 dark:border-blue-800 dark:bg-gray-800',
+              'ltc-color-border ltc-color-bg-alt absolute right-1.5 top-full z-10 inline-block rounded-b-lg border-2 p-2',
             )}
             id='navbar-default'
           >
@@ -84,9 +81,8 @@ export default function Navbar(props: { navId: string }) {
                   <a
                     href={route}
                     className={concat(
-                      props.navId === id && 'bg-blue-900',
-                      'ltc-button-focus-outline ltc-color-link block rounded-lg px-2 py-1',
-                      'dark:hover:bg-blue-800',
+                      props.navId === id && 'ltc-color-bg-blue',
+                      'ltc-button-focus-outline ltc-color-link ltc-color-bg-button block rounded-lg px-2 py-1',
                     )}
                   >
                     {name}

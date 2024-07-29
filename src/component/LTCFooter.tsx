@@ -9,8 +9,8 @@ import IconWithLabel from './IconWithLabel'
 export default function LTCFooter() {
   return (
     <>
-      <div className='h-6' />
-      <footer className='fixed bottom-0 flex w-full justify-center border-t-2 border-b-blue-300 bg-gray-100 px-4 py-1 dark:border-blue-800 dark:bg-gray-800'>
+      <div className='h-10' />
+      <footer className='ltc-color-bg-alt ltc-color-border ltc-text-h5 fixed bottom-0 flex w-full justify-center border-t-2 px-4 py-1'>
         <div className='text-md flex w-screen max-w-screen-xl items-center justify-between space-x-5 pb-0.5'>
           <IconWithLabel
             link='/blog/ltc'

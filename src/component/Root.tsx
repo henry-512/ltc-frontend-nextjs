@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google'
 import Navbar from './Navbar'
 import LTCFooter from './LTCFooter'
+import { concat } from '@/util'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,9 +23,7 @@ export default function Root(props: {
   }
 
   return (
-    <body
-      className={`${inter.className} bg-white text-gray-700 dark:bg-gray-900 dark:text-gray-200`}
-    >
+    <body className={concat(inter.className, 'ltc-color-bg ltc-color-text')}>
       {props.hideNav || (
         // display:unset lets sticky work properly
         <header style={{ display: 'unset' }}>
