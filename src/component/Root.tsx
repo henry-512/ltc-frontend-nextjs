@@ -1,9 +1,5 @@
-import { Inter } from 'next/font/google'
-import Navbar from './Navbar'
 import LTCFooter from './LTCFooter'
-import { concat } from '@/util'
-
-const inter = Inter({ subsets: ['latin'] })
+import Navbar from './Navbar'
 
 /**
  * The root component for the main website. Responsible for rendering the navbar and footer, and setting text/background colors and fonts.
@@ -23,7 +19,7 @@ export default function Root(props: {
   }
 
   return (
-    <body className={concat(inter.className, 'ltc-color-bg ltc-color-text')}>
+    <>
       {props.hideNav || (
         // display:unset lets sticky work properly
         <header style={{ display: 'unset' }}>
@@ -32,6 +28,6 @@ export default function Root(props: {
       )}
       <main>{props.children}</main>
       <LTCFooter />
-    </body>
+    </>
   )
 }
