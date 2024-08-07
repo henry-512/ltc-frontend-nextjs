@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import '../app/globals.css'
-import { concat } from '@/util'
+import { concatCSS } from '@/util'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={concat(inter.className, 'ltc-color-bg ltc-color-text')}>
+      <body className={concatCSS(inter.className, 'ltc-color-bg ltc-color-text')}>
         {children}
       </body>
     </html>

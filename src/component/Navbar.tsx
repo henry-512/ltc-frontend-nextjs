@@ -1,6 +1,6 @@
 'use client'
 
-import { concat } from '@/util'
+import { concatCSS } from '@/util'
 import { useRef, useState } from 'react'
 import { IoMenu } from 'react-icons/io5'
 
@@ -55,7 +55,7 @@ export default function Navbar(props: { navId: string }) {
               <li key={route} className='mx-3'>
                 <a
                   href={route}
-                  className={concat(
+                  className={concatCSS(
                     props.navId === id && 'ltc-color-bg-blue',
                     'ltc-button-focus-outline ltc-color-bg-button ltc-color-link block rounded-t-lg px-2 py-1',
                   )}
@@ -69,7 +69,7 @@ export default function Navbar(props: { navId: string }) {
         {/* TD toggle menu (md-)*/}
         <div className='flex animate-fadeVisible flex-row md:hidden'>
           <div
-            className={concat(
+            className={concatCSS(
               !mobileOpened && 'hidden',
               'ltc-color-border ltc-color-bg-alt absolute right-1.5 top-full z-10 inline-block rounded-b-lg border-2 p-2',
             )}
@@ -80,7 +80,7 @@ export default function Navbar(props: { navId: string }) {
                 <li key={route}>
                   <a
                     href={route}
-                    className={concat(
+                    className={concatCSS(
                       props.navId === id && 'ltc-color-bg-blue',
                       'ltc-button-focus-outline ltc-color-link ltc-color-bg-button block rounded-lg px-2 py-1',
                     )}

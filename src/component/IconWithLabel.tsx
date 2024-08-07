@@ -1,4 +1,4 @@
-import { concat } from '@/util'
+import { concatCSS } from '@/util'
 import React, { ReactElement, JSXElementConstructor } from 'react'
 
 /**
@@ -20,7 +20,7 @@ export default function IconWithLabel(props: {
   textHideBreakpoint?: 'none' | 'xs' | 'sm'
   inline?: boolean
 }) {
-  const textCSS = concat(
+  const textCSS = concatCSS(
     props.textHideBreakpoint === 'none' && 'inline animate-fadeVisible',
     'animate-fadeHidden',
     props.textHideBreakpoint === 'xs'
@@ -30,7 +30,7 @@ export default function IconWithLabel(props: {
   return (
     <a
       href={props.link}
-      className={concat(
+      className={concatCSS(
         props.inline ? 'inline' : 'flex flex-row items-center space-x-1',
         'ltc-button-focus-outline ltc-color-link text-nowrap rounded-lg px-1',
       )}
@@ -41,7 +41,7 @@ export default function IconWithLabel(props: {
       {props.inline
         ? React.Children.map(props.children, (c) =>
             React.cloneElement(c, {
-              className: concat(c.props.className, 'inline'),
+              className: concatCSS(c.props.className, 'inline'),
             }),
           )
         : props.children}
