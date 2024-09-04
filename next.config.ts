@@ -1,7 +1,6 @@
-// @ts-check
+import type { NextConfig } from 'next'
 
-/** @type {import('next').NextConfig} */
-export default {
+const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
@@ -11,4 +10,7 @@ export default {
       },
     ]
   },
+  output: 'standalone',
 }
+
+export default nextConfig
