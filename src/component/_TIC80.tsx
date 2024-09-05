@@ -35,6 +35,9 @@ export default function TIC80(props: { cart: string; mute?: boolean }) {
         onClick={() => {
           // turn on the canvas
           const canvas = document.getElementById('canvas')
+          if (canvas == undefined) {
+            return
+          }
           canvas.className = concatCSS(canvasClassName, 'block')
           // find this component so we can remove it
           const gameFrame = document.getElementById('tic80-frame')
@@ -45,8 +48,8 @@ export default function TIC80(props: { cart: string; mute?: boolean }) {
           // path to tic80 source
           scriptTag.src = 'tic80/tic80.js'
           // append the script to the DOM
-          firstScriptTag.parentNode.insertBefore(scriptTag, firstScriptTag)
-          gameFrame.remove()
+          firstScriptTag.parentNode?.insertBefore(scriptTag, firstScriptTag)
+          gameFrame?.remove()
         }}
       >
         <span>- CLICK TO PLAY -</span>

@@ -14,6 +14,7 @@ const nextConfig = {
     ]
   },
   output: 'standalone',
+  swcMinify: false,
 }
 
 export default nextConfig
