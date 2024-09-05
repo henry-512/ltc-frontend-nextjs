@@ -10,15 +10,13 @@
     "pretty": "npx prettier ./src --write"
   },
   "dependencies": {
-    "@unpic/react": "^0.1.14",
     "leaflet": "^1.9.4",
     "leaflet-defaulticon-compatibility": "^0.1.2",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
-    "react-leaflet": "^4.2.1",
-    "swr": "^2.2.5"
+    "react-leaflet": "^4.2.1"
   },
   "devDependencies": {
     "@types/leaflet": "^1.9.12",
