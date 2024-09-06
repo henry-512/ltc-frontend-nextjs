@@ -64,8 +64,8 @@ const PROJECTS = [
     'peostri-lms',
     'PEO STRI Logistics Management Software',
     peostrilms,
-    'Senior project full-stack web app for managing logistics for PEO STRI',
-    'https://github.com/Capstone-US-Army-PEOSTRI/peostri-lms/blob/master/docs/demo/demo_video.mp4',
+    'Senior project: Full-stack web app for managing logistics for PEOSTRI',
+    '/projects/peostri-lms',
     'https://github.com/Capstone-US-Army-PEOSTRI/peostri-lms',
     'https://github.com/Capstone-US-Army-PEOSTRI/peostri-lms/tree/master/docs'
   )

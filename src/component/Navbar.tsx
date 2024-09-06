@@ -41,7 +41,7 @@ export default function Navbar(props: { navId: string }) {
       <div className='mx-auto flex max-w-screen-xl items-center justify-between p-3 pb-0'>
         <a href='/home' className='ltc-button-focus-outline rounded-t-lg'>
           <span className='ltc-text-h2 hidden whitespace-nowrap 2xs:block'>
-            like-the-color
+            likethecolor
           </span>
           <span className='ltc-text-h2 whitespace-nowrap 2xs:hidden'>ltc</span>
         </a>
