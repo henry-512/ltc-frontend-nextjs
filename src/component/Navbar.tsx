@@ -6,10 +6,10 @@ import { IoMenu } from 'react-icons/io5'
 
 const pages = [
   ['home', '/home', 'home'],
-  ['about', '/about', 'whois'],
-  ['projects', '/projects', 'projects'],
+  ['about', '/home/#about', 'whois'],
+  ['projects', '/home/#projects', 'projects'],
   ['blog', '/blog', 'devblog'],
-  ['contact', '/contact', 'contact'],
+  // ['contact', '/contact', 'contact'],
 ]
 
 /**
