@@ -14,7 +14,7 @@ import React, { ReactElement, JSXElementConstructor } from 'react'
  */
 export default function IconWithLabel(props: {
   text: string
-  link: string
+  link: string | undefined
   children: ReactElement<any, string | JSXElementConstructor<any>>
   newTab?: boolean
   textHideBreakpoint?: 'none' | 'xs' | 'sm'
@@ -31,6 +31,7 @@ export default function IconWithLabel(props: {
     <a
       href={props.link}
       className={concatCSS(
+        props.link == undefined && 'hidden',
         props.inline ? 'inline' : 'flex flex-row items-center space-x-1',
         'ltc-button-focus-outline ltc-color-link text-nowrap rounded-lg px-1',
       )}

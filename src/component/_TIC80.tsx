@@ -46,7 +46,7 @@ export default function TIC80(props: { cart: string; mute?: boolean }) {
             // find the first script tag in the document
             firstScriptTag = document.getElementsByTagName('script')[0]
           // path to tic80 source
-          scriptTag.src = 'tic80/tic80.js'
+          scriptTag.src = '/tic80/tic80.js'
           // append the script to the DOM
           firstScriptTag.parentNode?.insertBefore(scriptTag, firstScriptTag)
           gameFrame?.remove()

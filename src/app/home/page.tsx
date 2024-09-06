@@ -6,6 +6,7 @@ import { LuExternalLink } from 'react-icons/lu'
 import image from '../../../../image.png'
 import i2 from '../../../../i2.png'
 import i3 from '../../../../i3.png'
+import { getProjects } from '@/data/Projects'
 
 /**
  * Home page. Gives a short description of me and the website and some cool text.
@@ -16,9 +17,12 @@ export default function Home() {
   return (
     <Root navId='home'>
       <div className='mx-auto flex min-h-main max-w-screen-xl flex-col items-center gap-y-10 p-3 text-center'>
-        <div>
-          <h1 className='ltc-text-h1'>Henry Thiel</h1>
+        {/* <div>
+          <h1 className='ltc-text-h1'>Henry</h1>
           <h2 className='ltc-text-h3'>Software Developer</h2>
+        </div> */}
+        <div className='flex flex-row flex-wrap content-end justify-center'>
+          <RainbowText text='SOFTWARE DEVELOPMENT IS MY PASSION' />
         </div>
         <p className='inline max-w-screen-lg'>
           Hello! I&apos;m a software developer with a background in full-stack
@@ -43,22 +47,18 @@ export default function Home() {
             <LuExternalLink fontSize='12' />
           </IconWithLabel>
         </p>
-        <div className='ltc-text-h3'>Cool Stuff</div>
         <div className='flex max-w-screen-xl flex-row flex-wrap place-content-center gap-4'>
-          {images.map((img, i) => (
+          {getProjects().map((p, i) => (
             <ProjectCard
               key={i}
-              image={img}
-              name='like-the-color.dev'
-              desc='Full-stack website for hosting my projects'
-              demo='/'
-              source='https://github.com/henry-512/ltc-frontend-nextjs'
-              blog='/blog/ltc'
+              image={p.image}
+              name={p.name}
+              desc={p.description}
+              demo={p.demo}
+              source={p.source}
+              blog={p.blog}
             />
           ))}
-        </div>
-        <div className='flex flex-row flex-wrap content-end justify-center'>
-          <RainbowText text='SOFTWARE DEVELOPMENT IS MY PASSION' />
         </div>
       </div>
     </Root>

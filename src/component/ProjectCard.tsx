@@ -8,13 +8,13 @@ export default function ProjectCard(props: {
   name: string
   desc: string
   image: StaticImageData
-  demo: string
-  source: string
-  blog: string
+  demo: string | undefined
+  source: string | undefined
+  blog: string | undefined
 }) {
   return (
     <div className='ltc-color-bg-alt ltc-border flex h-72 w-72 flex-col p-3'>
-      <a className='align-center max-h-32 max-w-64' href={props.demo}>
+      <a className='max-h-32 max-w-64 justify-center flex' href={props.demo ?? props.blog ?? props.source}>
         <Image
           src={props.image}
           alt={props.name}

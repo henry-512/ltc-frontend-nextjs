@@ -11,7 +11,7 @@ export default function LTCFooter() {
     <>
       <div className='h-10' />
       <footer className='ltc-color-bg-alt ltc-color-border ltc-text-h5 fixed bottom-0 flex w-full justify-center border-t-2 px-4 py-1'>
-        <div className='text-md flex w-screen max-w-screen-xl items-center justify-between space-x-5 pb-0.5'>
+        <div className='flex w-screen max-w-screen-xl items-center justify-between space-x-5 pb-0.5'>
           <IconWithLabel
             link='/blog/ltc'
             text='powered by magic'
@@ -34,9 +34,9 @@ export default function LTCFooter() {
             >
               <FaGithub fontSize='20' />
             </IconWithLabel>
-            <IconWithLabel link='/contact' text='Email' newTab>
+            {/* <IconWithLabel link='/contact' text='Email' newTab>
               <MdEmail fontSize='20' />
-            </IconWithLabel>
+            </IconWithLabel> */}
           </div>
         </div>
       </footer>
