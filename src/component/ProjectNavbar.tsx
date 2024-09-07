@@ -14,7 +14,6 @@ export default function NavBar(props: { project: string }) {
           <IconWithLabel
             text='Demo'
             link={project?.demo}
-            textHideBreakpoint='none'
           >
             <LuExternalLink fontSize='20' />
           </IconWithLabel>
@@ -22,7 +21,6 @@ export default function NavBar(props: { project: string }) {
             link={project?.source}
             text='Source'
             newTab
-            textHideBreakpoint='xs'
           >
             <FaGithub fontSize='20' />
           </IconWithLabel>
@@ -30,7 +28,6 @@ export default function NavBar(props: { project: string }) {
             link={project?.blog}
             text='About'
             newTab
-            textHideBreakpoint='none'
           >
             <IoMdJournal fontSize='20' />
           </IconWithLabel>

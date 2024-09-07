@@ -58,6 +58,9 @@ export default function Home() {
             />
           ))}
         </div>
+        <div className='ltc-text-h3'>
+          And more I haven&apos;t published!
+        </div>
       </div>
     </Root>
   )
