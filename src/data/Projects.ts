@@ -67,8 +67,8 @@ const PROJECTS = [
     'Senior project: Full-stack web app for managing logistics for PEOSTRI',
     '/projects/peostri-lms',
     'https://github.com/Capstone-US-Army-PEOSTRI/peostri-lms',
-    'https://github.com/Capstone-US-Army-PEOSTRI/peostri-lms/tree/master/docs'
-  )
+    'https://github.com/Capstone-US-Army-PEOSTRI/peostri-lms/tree/master/docs',
+  ),
 ]
 
 export function getProjects() {

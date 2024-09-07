@@ -11,7 +11,7 @@ export default function RainbowText(props: { text: string }) {
       {props.text.split(' ').map((s, i) => (
         <span
           key={i}
-          className='flex animate-rainbow select-none flex-wrap justify-center px-3 ltc-text-rainbow'
+          className='ltc-text-rainbow flex animate-rainbow select-none flex-wrap justify-center px-3'
           style={{ paddingBottom: '20px' }}
         >
           {s.split('').map((c, j) => {

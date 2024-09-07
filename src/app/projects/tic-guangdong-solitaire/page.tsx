@@ -1,6 +1,6 @@
+import ProjectNavbar from '@/component/ProjectNavbar'
 import Root from '@/component/Root'
 import TIC80 from '@/component/TIC80'
-import ProjectNavbar from '@/component/ProjectNavbar'
 import { getProject } from '@/data/Projects'
 
 export default function Projects() {
@@ -13,7 +13,7 @@ export default function Projects() {
       <div className='mt-2 flex flex-col items-center space-y-5'>
         <div className='ltc-text-h1 text-center'>{project?.title}</div>
         <TIC80 cart='/guangdong.tic' />
-        <div className='flex flex-row flex-wrap place-content-center gap-x-10 ltc-text-h5'>
+        <div className='ltc-text-h5 flex flex-row flex-wrap place-content-center gap-x-10'>
           <div>Arrow keys: D-pad</div>
           <div>Z key: A button</div>
           <div>X key: B button</div>

@@ -1,8 +1,8 @@
 import Image, { StaticImageData } from 'next/image'
 import { FaGithub } from 'react-icons/fa'
-import IconWithLabel from './IconWithLabel'
-import { LuExternalLink } from 'react-icons/lu'
 import { IoMdJournal } from 'react-icons/io'
+import { LuExternalLink } from 'react-icons/lu'
+import IconWithLabel from './IconWithLabel'
 
 export default function ProjectCard(props: {
   name: string
@@ -14,7 +14,10 @@ export default function ProjectCard(props: {
 }) {
   return (
     <div className='ltc-color-bg-alt ltc-border flex h-72 w-72 flex-col p-3'>
-      <a className='max-h-32 max-w-64 justify-center flex' href={props.demo ?? props.blog ?? props.source}>
+      <a
+        className='flex max-h-32 max-w-64 justify-center'
+        href={props.demo ?? props.blog ?? props.source}
+      >
         <Image
           src={props.image}
           alt={props.name}
@@ -35,11 +38,7 @@ export default function ProjectCard(props: {
         >
           <FaGithub fontSize='20' />
         </IconWithLabel>
-        <IconWithLabel
-          text='About'
-          link={props.blog}
-          textHideBreakpoint='none'
-        >
+        <IconWithLabel text='About' link={props.blog} textHideBreakpoint='none'>
           <IoMdJournal fontSize='20' />
         </IconWithLabel>
       </div>

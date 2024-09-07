@@ -1,8 +1,6 @@
-import IconWithLabel from '@/component/IconWithLabel'
 import ProjectCard from '@/component/ProjectCard'
 import RainbowText from '@/component/RainbowText'
 import Root from '@/component/Root'
-import { LuExternalLink } from 'react-icons/lu'
 import { getProjects } from '@/data/Projects'
 
 /**
@@ -19,7 +17,7 @@ export default function Home() {
         <div className='flex flex-row flex-wrap content-end justify-center'>
           <RainbowText text='SOFTWARE DEVELOPMENT IS MY PASSION' />
         </div>
-        <p className='inline max-w-screen-lg ltc-text-h5' id='about'>
+        <p className='ltc-text-h5 inline max-w-screen-lg' id='about'>
           Hello! I&apos;m a software developer with a background in full-stack
           web development and a passion for writing code. This self-hosted
           website is a test of my skills and a unified place to host the stuff I
