@@ -38,7 +38,6 @@ export default function ProjectCard(props: {
         <IconWithLabel
           text='About'
           link={props.blog}
-          newTab
           textHideBreakpoint='none'
         >
           <IoMdJournal fontSize='20' />

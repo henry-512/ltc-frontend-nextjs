@@ -28,7 +28,7 @@ class Project {
     this.description = description
     this.demo = demo
     this.source = source
-    this.blog = undefined
+    this.blog = blog
   }
 }
 
