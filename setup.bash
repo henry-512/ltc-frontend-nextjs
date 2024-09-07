@@ -14,8 +14,8 @@ cp Dockerfile ltc-frontend-nextjs
 # tarball
 tar czf ltc-frontend-nextjs.tar.gz ltc-frontend-nextjs
 # ship it
-echo Shipping to $PI_SERVER_IP
-scp ltc-frontend-nextjs.tar.gz server@$PI_SERVER_IP:~
+echo Shipping to $(<../pi_server)
+scp ltc-frontend-nextjs.tar.gz server@$(<../pi_server):~
 
 # cleanup
 rm -r ltc-frontend-nextjs
