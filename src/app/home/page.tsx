@@ -19,28 +19,11 @@ export default function Home() {
         <div className='flex flex-row flex-wrap content-end justify-center'>
           <RainbowText text='SOFTWARE DEVELOPMENT IS MY PASSION' />
         </div>
-        <p className='inline max-w-screen-lg' id='about'>
+        <p className='inline max-w-screen-lg ltc-text-h5' id='about'>
           Hello! I&apos;m a software developer with a background in full-stack
           web development and a passion for writing code. This self-hosted
           website is a test of my skills and a unified place to host the stuff I
-          make. If you want to learn more, check out my
-          <IconWithLabel
-            text='devblog'
-            link='/blog'
-            textHideBreakpoint='none'
-            inline
-          >
-            <LuExternalLink fontSize='12' />
-          </IconWithLabel>
-          or look around at my
-          <IconWithLabel
-            text='projects'
-            link='/home/#projects'
-            textHideBreakpoint='none'
-            inline
-          >
-            <LuExternalLink fontSize='12' />
-          </IconWithLabel>
+          make.
         </p>
         <div
           className='flex max-w-screen-xl flex-row flex-wrap place-content-center gap-4'
@@ -58,9 +41,7 @@ export default function Home() {
             />
           ))}
         </div>
-        <div className='ltc-text-h3'>
-          And more I haven&apos;t published!
-        </div>
+        <div className='ltc-text-h3'>And more I haven&apos;t published!</div>
       </div>
     </Root>
   )

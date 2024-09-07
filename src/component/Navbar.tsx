@@ -8,7 +8,7 @@ const pages = [
   ['home', '/home', 'home'],
   ['about', '/home/#about', 'whois'],
   ['projects', '/home/#projects', 'projects'],
-  ['blog', '/blog', 'devblog'],
+  ['blog', '/home/#devblog', 'devblog'],
   // ['contact', '/contact', 'contact'],
 ]
 
