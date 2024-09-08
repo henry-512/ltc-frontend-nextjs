@@ -7,7 +7,7 @@ import 'leaflet-defaulticon-compatibility'
 
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 
-export default function Map() {
+export default function Map(props: { src: string }) {
   const position: [number, number] = [0, 0]
 
   return (
@@ -20,7 +20,7 @@ export default function Map() {
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url='http://localhost:5166/api/RmRooms/image/{x}/{y}'
+        url={props.src}
       />
       <Marker position={position}>
         <Popup>
