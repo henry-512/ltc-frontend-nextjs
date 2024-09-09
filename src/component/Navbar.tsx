@@ -1,17 +1,21 @@
 'use client'
 
-import { concat } from '@/util'
+import { concatCSS } from '@/util'
 import { useRef, useState } from 'react'
 import { IoMenu } from 'react-icons/io5'
 
 const pages = [
   ['home', '/home', 'home'],
-  ['about', '/about', 'whois'],
-  ['projects', '/projects', 'projects'],
-  ['blog', '/blog', 'devblog'],
-  ['contact', '/contact', 'contact'],
+  ['about', '/home/#about', 'whois'],
+  ['projects', '/home/#projects', 'projects'],
+  ['blog', '/home/#devblog', 'devblog'],
+  // ['contact', '/contact', 'contact'],
 ]
 
+/**
+ * Client component. Navigation bar, designed for the top of the screen.
+ * @param navId The internal id for what page is selected.
+ */
 export default function Navbar(props: { navId: string }) {
   const [mobileOpened, setMobileOpened] = useState(false)
   const mainBox = useRef<any>(null)
@@ -31,32 +35,29 @@ export default function Navbar(props: { navId: string }) {
 
   return (
     <nav
-      className="sticky top-0 w-full bg-gray-100 dark:bg-gray-800 font-medium text-lg z-10 border-b-blue-300 dark:border-blue-800 border-b-2 text-nowrap"
+      className='ltc-color-bg-alt ltc-color-border ltc-text-h4 sticky top-0 z-10 w-full text-nowrap border-b-2'
       ref={mainBox}
     >
-      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-3 pb-0">
-        <a href="/home" className="ltc-button-focus-outline rounded-t-lg">
-          <span className="self-center text-3xl font-semibold whitespace-nowrap hidden 2xs:block px-1">
-            like-the-color
+      <div className='mx-auto flex max-w-screen-xl items-center justify-between p-3 pb-0'>
+        <a href='/home' className='ltc-button-focus-outline rounded-t-lg'>
+          <span className='ltc-text-h2 hidden whitespace-nowrap 2xs:block'>
+            likethecolor
           </span>
-          <span className="self-center text-3xl font-semibold whitespace-nowrap 2xs:hidden">
-            ltc
-          </span>
+          <span className='ltc-text-h2 whitespace-nowrap 2xs:hidden'>ltc</span>
         </a>
         {/* L-R nav menu (md+) */}
         <div
-          className="hidden md:animate-fadeVisible w-auto md:block"
-          id="navbar-default"
+          className='hidden w-auto md:block md:animate-fadeVisible'
+          id='navbar-default'
         >
-          <ul className="flex flex-row shrink">
+          <ul className='flex shrink flex-row'>
             {pages.map(([id, route, name]) => (
-              <li key={route} className="mx-3">
+              <li key={route} className='mx-3'>
                 <a
                   href={route}
-                  className={concat(
-                    props.navId === id && 'bg-blue-200 dark:bg-blue-900',
-                    'ltc-button-focus-outline ltc-color-link rounded-t-lg px-2 py-1 block',
-                    'hover:bg-blue-300 dark:hover:bg-blue-800'
+                  className={concatCSS(
+                    props.navId === id && 'ltc-color-bg-blue',
+                    'ltc-button-focus-outline ltc-color-bg-button ltc-color-link block rounded-t-lg px-2 py-1',
                   )}
                 >
                   {name}
@@ -66,23 +67,22 @@ export default function Navbar(props: { navId: string }) {
           </ul>
         </div>
         {/* TD toggle menu (md-)*/}
-        <div className="flex flex-row md:hidden animate-fadeVisible ">
+        <div className='flex animate-fadeVisible flex-row md:hidden'>
           <div
-            className={concat(
+            className={concatCSS(
               !mobileOpened && 'hidden',
-              'absolute right-1.5 top-full bg-gray-100 dark:bg-gray-800 inline-block p-2 z-10 border-b-blue-300 dark:border-blue-800 border-2 rounded-b-lg'
+              'ltc-color-border ltc-color-bg-alt absolute right-1.5 top-full z-10 inline-block rounded-b-lg border-2 p-2',
             )}
-            id="navbar-default"
+            id='navbar-default'
           >
-            <ul className="font-medium flex flex-col">
+            <ul className='flex flex-col font-medium'>
               {pages.map(([id, route, name]) => (
                 <li key={route}>
                   <a
                     href={route}
-                    className={concat(
-                      props.navId === id && 'bg-blue-900',
-                      'ltc-button-focus-outline ltc-color-link rounded-lg px-2 py-1 block',
-                      'dark:hover:bg-blue-800'
+                    className={concatCSS(
+                      props.navId === id && 'ltc-color-bg-blue',
+                      'ltc-button-focus-outline ltc-color-link ltc-color-bg-button block rounded-lg px-2 py-1',
                     )}
                   >
                     {name}
@@ -92,16 +92,16 @@ export default function Navbar(props: { navId: string }) {
             </ul>
           </div>
           <button
-            data-collapse-toggle="navbar-default"
-            type="button"
-            className="ltc-button-focus-outline ltc-color-link inline-flex flex-row items-center justify-center rounded-lg space-x-3 pr-2"
+            data-collapse-toggle='navbar-default'
+            type='button'
+            className='ltc-button-focus-outline ltc-color-link inline-flex flex-row items-center justify-center space-x-3 rounded-lg pr-2'
             onClick={() => setMobileOpened(!mobileOpened)}
           >
-            <span className="sr-only">Open navigation menu</span>
-            <span className="animate-fadeHidden xs:animate-fadeVisible xs:block">
+            <span className='sr-only'>Open navigation menu</span>
+            <span className='animate-fadeHidden xs:block xs:animate-fadeVisible'>
               nav
             </span>
-            <IoMenu fontSize="30" />
+            <IoMenu fontSize='30' />
           </button>
         </div>
       </div>

@@ -2,15 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-  Colors
-    bg: white | gray-900
- */
-.ltc-color-link {
-  @apply text-blue-600 hover:text-blue-800 dark:text-blue-300 hover:dark:text-blue-400
+.ltc-text-h1 {
+  @apply text-6xl font-bold;
 }
 
+.ltc-text-h2 {
+  @apply text-3xl font-semibold;
+}
+
+.ltc-text-h3 {
+  @apply text-2xl font-medium;
+}
+
+.ltc-text-h4 {
+  @apply text-xl font-medium;
+}
+
+.ltc-text-h5 {
+  @apply text-lg font-medium;
+}
+
+.ltc-text-rainbow {
+  @apply text-5xl font-extralight;
+}
+
+.ltc-color-link {
+  @apply text-blue-600 hover:text-blue-800 dark:text-blue-300 hover:dark:text-blue-400;
+}
+
+.ltc-color-bg-button {
+  @apply hover:bg-blue-200 dark:hover:bg-blue-900;
+}
+
+.ltc-color-bg {
+  @apply bg-white dark:bg-gray-900;
+}
+
+.ltc-color-bg-alt {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+.ltc-color-text {
+  @apply text-gray-800 dark:text-gray-200;
+}
+
+.ltc-color-border {
+  @apply border-blue-300 dark:border-blue-800;
+}
+
+.ltc-color-bg-blue {
+  @apply bg-blue-300 dark:bg-blue-800;
+}
+
+.ltc-border {
+  @apply ltc-color-border rounded-lg border-2;
+}
 
 .ltc-button-focus-outline {
-  @apply focus:ring-2 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-600;
+  @apply focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600;
 }

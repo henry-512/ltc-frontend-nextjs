@@ -1,0 +1,52 @@
+# Like The Color
+
+This document explains how this website works, and explains some of the choices. LTC was conceived as a way for me to experiment with the entirety of the modern web stack, and is designed to be modular.
+
+## Overview
+
+The server runs on a Raspberry Pi, with each part of the stack sandboxed inside Docker containers. Cloudflare handles DNS, while Nginx handles domain routing to different containers. The frontend uses NextJS, with Tailwind for styling.
+
+# Tech Stack
+
+- [NextJS Frontend](https://github.com/henry-512/ltc-frontend-nextjs)
+- [Bash Server](https://github.com/henry-512/ltc-server-bash)
+
+## Frontend
+
+The frontend uses NextJS with Tailwind to provide stylings, with the standard file-system based routing. The frontend is compiled on my development machine, and a built version is sent to the server.
+
+### NextJS
+
+NextJS is a React framework, providing server-side rendering and static website generation. I chose NextJS because it is popular, which makes this good practice. In retrospect, NextJS is probably too heavy for this website. Getting it to compile on my server's hardware turned out to be impossible (for now), but I also decided to self-host rather than use something else. The React ecosystem continues to be very helpful though.
+
+### MDX
+
+[MDX](https://mdxjs.com/) is a Markdown compiler for javascript-based frontends. It has [nice integration with NextJS](https://nextjs.org/docs/app/building-your-application/configuring/mdx), which makes it easy to use. MDX is used for all text-heavy pages, most notably the blog you're currently reading!
+
+### Tailwind
+
+Tailwind is a post-css library and lets you use HTML classes instead of CSS styles. Compared to a component-based framework, like MaterialUI or Bootstrap, I found working with Tailwind to be slower, but more rewarding. It also forces you to learn more about CSS, since you need to write all of it yourself.
+
+## Backend
+
+Currently, LTC doesn't have a completed backend or API. I am experimenting with .NET for the API.
+
+## Web Server
+
+A stack of Docker containers, managed by Nginx, on the ship of Pi.
+
+### Raspberry Pi
+
+I had an old Pi lying around from years ago, and decided to finally put it to work. It's currently running the official headless os, which has been working fine. Hosting on a cloud service would likely be easier, but less fun.
+
+### Docker
+
+Docker is a tool to isolate programs from each other using containers. Each part of the server is containerized with Docker, which helps a lot for networking and security.
+
+### Nginx
+
+Nginx is a web server that serves as a reverse proxy for LTC. It's main goal is to route subdomains to the correct Docker container.
+
+## Hosting
+
+Cloudflare hosts my DNS records, with Github storing the code. Cloudflare also declares the domains, which are routed using Nginx on the hardware.

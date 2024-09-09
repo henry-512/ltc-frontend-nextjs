@@ -1,3 +1,8 @@
+/**
+ * Rainbow animation with a slow wave up and down. Each letter is offset.
+ * @param text The text to rainbow-ify.
+ * @returns Multiple <span> elements each containing one word of the text. Each letter is its own <span> element.
+ */
 export default function RainbowText(props: { text: string }) {
   let global_offset = 0
 
@@ -6,7 +11,7 @@ export default function RainbowText(props: { text: string }) {
       {props.text.split(' ').map((s, i) => (
         <span
           key={i}
-          className="text-5xl animate-rainbow px-3 select-none flex flex-wrap justify-center"
+          className='ltc-text-rainbow flex animate-rainbow select-none flex-wrap justify-center px-3'
           style={{ paddingBottom: '20px' }}
         >
           {s.split('').map((c, j) => {
@@ -14,7 +19,7 @@ export default function RainbowText(props: { text: string }) {
             return (
               <span
                 key={j}
-                className="animate-rainbow relative"
+                className='relative animate-rainbow'
                 style={{ animationDelay: `-${global_offset}s` }}
               >
                 {c}

@@ -1,0 +1,96 @@
+# TIC-80 Guangdong Solitaire
+
+A clone of Shenzhen Solitaire for the TIC-80 console.
+
+## Description
+
+[TIC-80](https://tic80.com/) is an open-source fantasy console created by nesbox. Fantasy consoles provide the same kinds of restrictions as writing for old consoles (file size limit, graphics restrictions, processor speed, etc) while being easy to code for. Being easy to code for is a huge boon; the api for TIC-80 is very limited, which makes it easy to understand. While you can do more with a modern game engine, TIC-80 provides an ease of use that is sometimes lacking with bigger engines.
+
+[Shenzhen Solitaire](https://store.steampowered.com/app/570490/SHENZHEN_SOLITAIRE/) is a solitaire variant originally made for the Zachtronics programming video game Shenzhen I/O. The specific rule set is very enjoyable. While some games are easy, most games require forward thinking with your use of free slots. This makes this variant more reliant on skill than other variants of solitaire.
+
+## Retrospect
+
+Shenzhen Solitaire is one of my favorite games. The games are short enough that you don't feel bad making mistakes, but long enough that you can use strategy. Randomness is a factor, but can be worked around with careful play.
+
+This clone is not perfect, but it pushes up against the limits of coding with TIC-80. At almost 900 significant lines, coding in a single file has become a pain. While refactoring into multiple files would greatly help, it breaks the spirit of coding for a virtual console.
+
+# Teardown
+
+## Architecture
+
+Guangdong Solitaire, or GS, was written using Lua. Lua is a high-level dynamic interpreted language commonly used for embedded systems, and it's also the favored language for TIC-80 programming. The sprites were made using the in-engine editor, and take up most of the first page (128x128 pixels).
+
+## Data structure
+
+Cards are represented using a single number, numbered 0-30. The tens place denotes the suit, while the ones place denotes the digit.
+
+```lua
+-- 1st suit, value 0 (dragon)
+card = 0
+-- 3rd suit, value 3
+card = 23
+```
+
+The board is stored as a 2d array of cards. The free slots are a 1d array, and the home spaces store only the top of the stack.
+
+```lua
+G.board = { {21, 22, ...}, {...}, {...}, {...}, {...}, {...}, {...}, {...} }
+G.slots = { 04, 18, 19 }
+G.free = { 3, 0, 9 }
+```
+
+Cards are commonly indexed using either their board coordinates (`x,y`) or their index into `G.slots` (`s`). Since a card can't exist in both places, most functions that use card positions will check the board first, and then assume that the card is in the slot `s`.
+
+## Animations
+
+Cards are animated using two tables. The first, `G.anim`, does a simple lerp between two points. The second, `G.shake`, oscillates back and forth as a sine wave.
+
+```lua
+-- card 13 flies from 0,0 to 10,10 in 20 frames
+table.insert(G.anim, {
+  13, --card
+  0, 0, --start coord
+  10, 10, --end coord
+  1, --animation counter
+  20, --frames to animate for
+  function () end, --callback function
+})
+
+-- the card at 0,2 (lua tables are 1-index)
+table.insert(G.shake, {
+  1, 3, --board coordinates
+  0, -- OR slot index
+  2, -- intensity
+  1, -- animation counter
+  10, -- shake duration
+  math.random(1, 10) -- offset into the shake
+})
+```
+
+Card shaking is handled with a wrapper function, which applies the card's shake as a pass through.
+
+```lua
+-- shakes the card at slot `i`, rendered at `sx,sy`
+DrawCard(G.slots[i], Shake(0, 0, i, sx, sy))
+```
+
+Lerp animations are done as the last step of rendering, and draw a card based on its lerp'd position.
+
+```lua
+function RunAnimations()
+  for ...
+    local card, x1, y1, x2, y2, cf, mf, call = table.unpack(anim)
+    --lerp :)
+    local x = x1 + (x2 - x1) * cf // mf
+    local y = y1 + (y2 - y1) * cf // mf
+    DrawCard(card, x, y)
+    ...
+  end
+end
+```
+
+## Game logic
+
+Checking if cards can be stacked is done by comparing the card's suit (`card // 10`) and value (`card % 10`) against the card to stack with.
+
+The game automatically moves cards to the home slot, if they are no longer needed. This is done by scanning the top of each card stack, checking if it is able to be saved, and pulling it off the stack.
